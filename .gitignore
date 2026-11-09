@@ -1,0 +1,6 @@
+.venv/
+temp/
+intermediates/
+original_files/
+outputs/
+AGENTS.md
