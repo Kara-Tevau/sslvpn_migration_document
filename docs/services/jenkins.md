@@ -12,14 +12,10 @@ Base：`http://192.168.13.204:80`
 WWW-Authenticate: Basic realm="Tevau Internal Service", charset="UTF-8"
 ```
 
-瀏覽器第一次開啟會跳出帳密視窗。腳本：
+瀏覽器第一次開啟會跳出帳密視窗。腳本對 Base 帶：
 
 ```http
 Authorization: Basic base64(username:password)
-```
-
-```sh
-curl -sS -u 'YOUR_USERNAME:YOUR_PASSWORD' 'http://192.168.13.204:80/'
 ```
 
 未帶憑證或憑證錯誤時回應 `401`，本文：

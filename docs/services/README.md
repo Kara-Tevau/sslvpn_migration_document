@@ -25,14 +25,14 @@
 | [jenkins.md](jenkins.md) | 只記入口與鑑權（HTTP Basic） |
 | [operations.md](operations.md) | 活動、積分、工單、內容、排程 |
 
-GitLab / Jenkins 產品 API 以官方文件為準，這裡不重複。其餘五個系統收的是切換時腳本**會打到的入口**（登入、分頁、詳情、匯出、審核、回調），不是全量 Controller。切換原則與日程見 [../migration.md](../migration.md)。
+GitLab / Jenkins 產品 API 以官方文件為準，這裡不重複。其餘五個系統只記鑑權與涵蓋範圍，不列具體路徑。切換原則與日程見 [../migration.md](../migration.md)。
 
 ## 怎麼用這份對照
 
 1. 先連 SSLVPN，代理指到用戶端連接埠。未連線時總表裡的位址不可達，這是預期行為。
 2. 用閘道帳號進網段；再用**該系統自己的帳號**換 token。兩套帳號不要混用。
-3. 把舊腳本的 host 換成總表裡的新 Base，Header 按各文件的鑑權節改。路徑不要從記憶體裡的舊文件站抄。
-4. 列表多為 POST Body 分頁（`page` 從 1、`pageSize` 預設 20）；匯出為 GET。詳情習慣 `peek/{id}`。
+3. 把舊腳本的 host 換成總表裡的新 Base，Header 按各文件的鑑權節改。具體路徑以各服務自己的倉庫為準，本目錄不列。
+4. 列表多為 POST Body 分頁（`page` 從 1、`pageSize` 預設 20）；匯出為 GET。
 5. 業務系統 token 是服務端簽發的隨機會話，**不是 JWT**，不要本地驗簽。
 
 ## 已知未收（切換後不必堵在本倉庫）

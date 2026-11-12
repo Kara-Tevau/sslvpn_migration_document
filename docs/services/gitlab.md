@@ -7,7 +7,7 @@ Base：`http://192.168.13.119:80`
 ## 鑑權
 
 1. **網頁工作階段**  
-   開啟 `http://192.168.13.119:80/`，使用 GitLab 使用者名稱與密碼登入。登入後瀏覽器帶 `_gitlab_session`。本階段不開放自行註冊。
+   開啟 Base 根路徑，使用 GitLab 使用者名稱與密碼登入。登入後瀏覽器帶 `_gitlab_session`。本階段不開放自行註冊。
 
 2. **個人存取權杖**  
    登入後在 GitLab 介面建立 Personal Access Token。以 HTTP 存取儲存庫時，使用者名稱任意、密碼填權杖；或在請求 Header 帶：
